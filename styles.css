@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+
+:root {
+    /* Primary */
+    --scissors-gradient: hsl(39, 89%, 49%), hsl(40, 84%, 53%);
+    --paper-gradient: hsl(230, 89%, 62%),hsl(230, 89%, 65%);
+    --rock-gradient: hsl(349, 71%, 52%), hsl(349, 70%, 56%);
+    --cyan: hsl(189, 59%, 53%), hsl(189, 58%, 57%);
+
+    /* Neutral */
+    --dark-text: hsl(229, 25%, 31%);
+    --score-text: hsl(229, 64%, 46%);
+    --header-outline: hsl(217, 16%, 45%);
+
+    /* Background */
+    --radial-gradient: hsl(214, 47%, 23%), hsl(237, 49%, 15%);
+
+    /* Shadows */
+    --shadow-btn: rgba(0, 0, 0, 0.15);
+    --shadow-border: rgba(0, 0, 0, 0.3);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+body {
+    background: linear-gradient(170deg, var(--radial-gradient));
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.75rem 1.75rem 2.5rem 1.75rem;
+}
+
+/* Styling Logo and score */
+.logo-score-container {
+    display: flex;
+    justify-content: space-between;
+    border: 3px solid var(--header-outline);
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.logo {
+    width: 100px;
+}
+
+.score-container {
+    background-color: white;
+    border-radius: 2px;
+    padding: 0.5rem 1.5rem;
+    text-align: center;
+}
+
+.score-title {
+    color: var(--score-text);
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.score {
+    font-size: 2.5rem;
+    color: var(--dark-text);
+}
+
+/* Styling player choice container */
+
+.triangle {
+    z-index: -2;
+    width: 250px;
+}
+
+.player-choice-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.choice-btn {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.choice-btn > img {
+    width: 45px;
+}
+
+.paper-btn {
+    color: #FFF;
+    background: white;
+    border: 15px solid transparent;
+    background-clip: padding-box;
+    margin-left: -223px;
+    margin-top: -220px;
+    box-shadow: inset 0px 6px var(--shadow-btn);
+}
+
+.paper-btn::before {
+    content: '';
+    position: absolute;
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    left: 0;
+    z-index: -1;
+    margin: -15px;
+    border-radius: inherit;
+    background: linear-gradient(45deg, var(--paper-gradient));
+    box-shadow: inset 0px -5px var(--shadow-border);
+}
+
+.scissors-btn {
+    color: #FFF;
+    background: white;
+    border: 15px solid transparent;
+    background-clip: padding-box;
+    margin-right: -223px;
+    margin-top: -220px;
+    box-shadow: inset 0px 6px var(--shadow-btn);
+}
+
+.scissors-btn::before {
+    content: '';
+    position: absolute;
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    left: 0;
+    z-index: -1;
+    margin: -15px;
+    border-radius: inherit;
+    background: linear-gradient(45deg, var(--scissors-gradient));
+    box-shadow: inset 0px -5px var(--shadow-border);
+}
+
+.rock-btn {
+    color: #FFF;
+    background: white;
+    border: 15px solid transparent;
+    background-clip: padding-box;
+    margin-top: 180px;
+    box-shadow: inset 0px 6px var(--shadow-btn);
+}
+
+.rock-btn::before {
+    content: '';
+    position: absolute;
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    left: 0;
+    z-index: -1;
+    margin: -15px;
+    border-radius: inherit;
+    background: linear-gradient(45deg, var(--rock-gradient));
+    box-shadow: inset 0px -5px var(--shadow-border);
+}
+
+
+
+
+
+.rules-modal {
+    display: none;
+}

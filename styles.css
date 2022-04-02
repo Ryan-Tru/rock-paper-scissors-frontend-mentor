@@ -27,13 +27,15 @@
     font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
-body {
+.rock-paper-scissors-app {
+    position: relative;
     background: linear-gradient(170deg, var(--radial-gradient));
     display: flex;
     height: 100vh;
     flex-direction: column;
     justify-content: space-between;
     padding: 1.75rem 1.75rem 2.5rem 1.75rem;
+    z-index: -2;
 }
 
 /* Styling Logo and score */
@@ -70,7 +72,7 @@ body {
 /* Styling player choice container */
 
 .triangle {
-    z-index: -2;
+    z-index: -1;
     width: 250px;
 }
 
@@ -86,7 +88,6 @@ body {
     height: 130px;
     border-radius: 50%;
     border: none;
-    transition: all 0.2s ease;
 }
 
 .choice-btn > img {
@@ -166,8 +167,30 @@ body {
 
 
 
-
+/* Styling rules modal */
 
 .rules-modal {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    margin-left: -1.75rem;
+    margin-top: -1.75rem;
+    padding: 6rem;
+}
+
+.rules-title {
+    padding-top: 4rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--dark-text);
+}
+
+.rules-close-button {
+    background-color: transparent;
+    border: none;
 }

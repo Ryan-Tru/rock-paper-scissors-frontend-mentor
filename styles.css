@@ -27,7 +27,7 @@
     font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
-.rock-paper-scissors-app {
+body {
     position: relative;
     background: linear-gradient(170deg, var(--radial-gradient));
     display: flex;
@@ -35,7 +35,6 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 1.75rem 1.75rem 2.5rem 1.75rem;
-    z-index: -2;
 }
 
 /* Styling Logo and score */
@@ -88,6 +87,21 @@
     height: 130px;
     border-radius: 50%;
     border: none;
+    box-shadow: inset 0px 6px var(--shadow-btn);
+}
+
+.choice-btn::before {
+    content: '';
+    position: absolute;
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    left: 0;
+    margin: -15px;
+    border-radius: inherit;
+    background: linear-gradient(45deg);
+    box-shadow: inset 0px -5px var(--shadow-border);
+    z-index: -1;
 }
 
 .choice-btn > img {
@@ -95,82 +109,58 @@
 }
 
 .paper-btn {
-    color: #FFF;
-    background: white;
     border: 15px solid transparent;
     background-clip: padding-box;
-    margin-left: -223px;
+    margin-left: -205px;
     margin-top: -220px;
-    box-shadow: inset 0px 6px var(--shadow-btn);
 }
 
 .paper-btn::before {
     content: '';
-    position: absolute;
-    top: 0; 
-    right: 0; 
-    bottom: 0; 
-    left: 0;
-    z-index: -1;
-    margin: -15px;
-    border-radius: inherit;
     background: linear-gradient(45deg, var(--paper-gradient));
-    box-shadow: inset 0px -5px var(--shadow-border);
 }
 
 .scissors-btn {
-    color: #FFF;
-    background: white;
     border: 15px solid transparent;
     background-clip: padding-box;
-    margin-right: -223px;
+    margin-right: -205px;
     margin-top: -220px;
-    box-shadow: inset 0px 6px var(--shadow-btn);
 }
 
 .scissors-btn::before {
     content: '';
-    position: absolute;
-    top: 0; 
-    right: 0; 
-    bottom: 0; 
-    left: 0;
-    z-index: -1;
-    margin: -15px;
-    border-radius: inherit;
     background: linear-gradient(45deg, var(--scissors-gradient));
-    box-shadow: inset 0px -5px var(--shadow-border);
 }
 
 .rock-btn {
-    color: #FFF;
-    background: white;
     border: 15px solid transparent;
     background-clip: padding-box;
-    margin-top: 180px;
-    box-shadow: inset 0px 6px var(--shadow-btn);
+    margin-top: 140px;
 }
 
 .rock-btn::before {
     content: '';
-    position: absolute;
-    top: 0; 
-    right: 0; 
-    bottom: 0; 
-    left: 0;
-    z-index: -1;
-    margin: -15px;
-    border-radius: inherit;
     background: linear-gradient(45deg, var(--rock-gradient));
-    box-shadow: inset 0px -5px var(--shadow-border);
 }
 
+/* Styling the rules button */
 
+.rules-btn {
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 10px;
+    background-color: transparent;
+    align-self: center;
+    padding: 0.5rem 2rem;
+    letter-spacing: 0.2rem;
+}
 
 /* Styling rules modal */
 
 .rules-modal {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -190,7 +180,7 @@
     color: var(--dark-text);
 }
 
-.rules-close-button {
+.rules-modal-close-btn {
     background-color: transparent;
     border: none;
 }
